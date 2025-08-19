@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dino Work Persona Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f8ff; padding: 20px; }
+        h1 { color: #2e8b57; }
+        .question { margin-bottom: 20px; }
+        .result { margin-top: 30px; padding: 20px; background-color: #e6ffe6; border: 2px solid #2e8b57; }
+    </style>
+</head>
+<body>
+    <h1>🦖 Dino Work Persona Quiz 🦕</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What’s your go-to move in a team meeting?</p>
+            <input type="radio" name="q1" value="Plant"> Pitch a wild idea<br>
+            <input type="radio" name="q1" value="Monitor Evaluator"> Analyze everyone's suggestions<br>
+            <input type="radio" name="q1" value="Coordinator"> Organize the discussion<br>
+            <input type="radio" name="q1" value="Teamworker"> Make sure everyone feels heard<br>
+        </div>
+        <div class="question">
+            <p>2. Your desk looks like:</p>
+            <input type="radio" name="q2" value="Completer Finisher"> A perfectly arranged command center<br>
+            <input type="radio" name="q2" value="Resource Investigator"> A treasure trove of random ideas<br>
+            <input type="radio" name="q2" value="Implementer"> Neat and practical<br>
+            <input type="radio" name="q2" value="Specialist"> A shrine to your favorite topic<br>
+        </div>
+        <div class="question">
+            <p>3. Your reaction to a surprise deadline:</p>
+            <input type="radio" name="q3" value="Shaper"> Challenge accepted!<br>
+            <input type="radio" name="q3" value="Completer Finisher"> Time to triple-check everything<br>
+            <input type="radio" name="q3" value="Teamworker"> Let’s help each other out<br>
+            <input type="radio" name="q3" value="Monitor Evaluator"> Let’s assess the situation<br>
+        </div>
+        <div class="question">
+            <p>4. What’s your favorite part of a project?</p>
+            <input type="radio" name="q4" value="Plant"> Brainstorming<br>
+            <input type="radio" name="q4" value="Implementer"> Execution<br>
+            <input type="radio" name="q4" value="Coordinator"> Planning<br>
+            <input type="radio" name="q4" value="Specialist"> Deep diving into the details<br>
+        </div>
+        <div class="question">
+            <p>5. Your coworkers describe you as:</p>
+            <input type="radio" name="q5" value="Teamworker"> Supportive<br>
+            <input type="radio" name="q5" value="Shaper"> Driven<br>
+            <input type="radio" name="q5" value="Resource Investigator"> Curious<br>
+            <input type="radio" name="q5" value="Monitor Evaluator"> Thoughtful<br>
+        </div>
+        <div class="question">
+            <p>6. What’s your coffee break vibe?</p>
+            <input type="radio" name="q6" value="Resource Investigator"> Chatting with everyone<br>
+            <input type="radio" name="q6" value="Specialist"> Reading an article<br>
+            <input type="radio" name="q6" value="Teamworker"> Checking in on coworkers<br>
+            <input type="radio" name="q6" value="Plant"> Sketching ideas<br>
+        </div>
+        <div class="question">
+            <p>7. You’re most likely to say:</p>
+            <input type="radio" name="q7" value="Coordinator"> “Let’s delegate!”<br>
+            <input type="radio" name="q7" value="Shaper"> “Let’s go faster!”<br>
+            <input type="radio" name="q7" value="Completer Finisher"> “Let’s fix that typo.”<br>
+            <input type="radio" name="q7" value="Monitor Evaluator"> “Let’s think this through.”<br>
+        </div>
+        <div class="question">
+            <p>8. Your ideal work environment:</p>
+            <input type="radio" name="q8" value="Implementer"> Structured and predictable<br>
+            <input type="radio" name="q8" value="Plant"> Creative and flexible<br>
+            <input type="radio" name="q8" value="Teamworker"> Friendly and collaborative<br>
+            <input type="radio" name="q8" value="Specialist"> Quiet and focused<br>
+        </div>
+        <div class="question">
+            <p>9. What motivates you most?</p>
+            <input type="radio" name="q9" value="Shaper"> Achieving goals<br>
+            <input type="radio" name="q9" value="Resource Investigator"> Discovering new things<br>
+            <input type="radio" name="q9" value="Completer Finisher"> Perfecting the details<br>
+            <input type="radio" name="q9" value="Coordinator"> Leading a team<br>
+        </div>
+        <div class="question">
+            <p>10. Your biggest strength:</p>
+            <input type="radio" name="q10" value="Monitor Evaluator"> Critical thinking<br>
+            <input type="radio" name="q10" value="Teamworker"> Empathy<br>
+            <input type="radio" name="q10" value="Implementer"> Reliability<br>
+            <input type="radio" name="q10" value="Plant"> Creativity<br>
+        </div>
+        <div class="question">
+            <p>11. What’s your role in a group project?</p>
+            <input type="radio" name="q11" value="Coordinator"> Organizer<br>
+            <input type="radio" name="q11" value="Specialist"> Expert<br>
+            <input type="radio" name="q11" value="Resource Investigator"> Connector<br>
+            <input type="radio" name="q11" value="Completer Finisher"> Editor<br>
+        </div>
+        <div class="question">
+            <p>12. Your reaction to office chaos:</p>
+            <input type="radio" name="q12" value="Teamworker"> Calm the herd<br>
+            <input type="radio" name="q12" value="Shaper"> Take charge<br>
+            <input type="radio" name="q12" value="Monitor Evaluator"> Assess the damage<br>
+            <input type="radio" name="q12" value="Implementer"> Restore order<br>
+        </div>
+        <button type="button" onclick="showResult()">Submit</button>
+    </form>
+
+    <div id="result" class="result" style="display:none;"></div>
+
+    <script>
+        const results = {
+            "Plant": "🧠💡🌿 The Strategic Stego: A spiky-brained idea machine! The Stegosaurus loves wandering off into the creative jungle, returning with wild, brilliant solutions no one saw coming.",
+            "Monitor Evaluator": "🔍🦴📊 The Thoughtful Triceratops: This three-horned thinker doesn’t rush. They analyze, evaluate, and ponder every angle before charging ahead.",
+            "Coordinator": "👑🦖📋 The Bossy Rex: T-Rex may have tiny arms, but they’ve got a big vision. They delegate like a pro and keep everyone stomping in sync.",
+            "Resource Investigator": "📞🦅🌍 The Networking Raptor: Velociraptor is fast, curious, and always sniffing out new opportunities. They know everyone, everywhere.",
+            "Implementer": "🔧🛡️🦕 The Reliable Tankylosaurus: Ankylosaurus is the armored backbone of the team. Practical, dependable, and always ready to roll up their sleeves.",
+            "Completer Finisher": "🧐📎🦴 The Detail Dipper: Pachycephalosaurus headbutts deadlines and polishes every pixel. Obsessed with perfection and won’t rest until it’s just right.",
+            "Teamworker": "🤗🌈🦕 The Huggy Iguanodon: Gentle, kind, and always ready to lend a claw. Iguanodon keeps the peace and makes sure everyone feels included.",
+            "Shaper": "⚡🔥🦖 The Pushy Carnotaurus: Carnotaurus charges through obstacles like a meteor. Bold, driven, and loves a challenge.",
+            "Specialist": "🔬📚🦕 The Focused Saurolo-Philosopher: Parasaurolophus knows everything about their niche. Quietly brilliant and loves diving into the details."
+        };
+
+        function showResult() {
+            const form = document.forms["quizForm"];
+            const scores = {};
+            for (let i = 1; i <= 12; i++) {
+                const answer = form["q" + i].value;
+                scores[answer] = (scores[answer] || 0) + 1;
+            }
+            const topRole = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+            document.getElementById("result").innerHTML = "<h2>Your Dino Persona:</h2><p>" + results[topRole] + "</p>";
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
